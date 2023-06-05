@@ -1,4 +1,6 @@
-public class sort_bubble {
+package sorting_alg;
+
+public class bubble {
 
     public static void main(String[] args) {
         int[] intArray =  {20, 35, -15, 7, 55, 1, -22};
