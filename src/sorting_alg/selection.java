@@ -4,21 +4,17 @@ public class selection {
     public static void main(String[] args) {
         int[] intArray =  {20, 35, -15, 7, 55, 1, -22};
 
-        for (int lastUnsortedIndex = intArray.length; lastUnsortedIndex > 0; lastUnsortedIndex--) {
+        for (int lastUnsortedIndex = intArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
 
-            int largestNumber = intArray[0];
-            int indexLargestNumber = 0;
-            int i;
-            for (i = 0; i < lastUnsortedIndex - 1; i++) {
+            int largest = 0;
 
-                if (intArray[i] < intArray[i + 1]) {
-                    indexLargestNumber = i + 1;
+            for (int i = 0; i <= lastUnsortedIndex; i++) {
+
+                if (intArray[i] > intArray[largest]) {
+                    largest = i;
                 }
-//                System.out.print(intArray[i] + " ");
             }
-            swap(intArray, i, indexLargestNumber);
-            System.out.println(i + " " + indexLargestNumber);
-//            System.out.println(largestNumber);
+            swap(intArray, largest, lastUnsortedIndex);
         }
 
         for (int i = 0; i < intArray.length; i++) {
