@@ -4,31 +4,22 @@ public class insertion {
     public static void main(String[] args) {
         int[] intArray =  {20, 35, -15, 7, 55, 1, -22};
 
-//        boolean stop_loop;
-        for (int firstUnsortedIndex = 0; firstUnsortedIndex < intArray.length - 1; firstUnsortedIndex++) {
+        for (int firstUnsortedIndex = 1; firstUnsortedIndex < intArray.length; firstUnsortedIndex++) {
 
+            int newElement  = intArray[firstUnsortedIndex];
 
-//            stop_loop = false;
-//            int num = 0;
-//            while (!stop_loop) {
-//
-//                if(intArray[firstUnsortedIndex] < intArray[firstUnsortedIndex + 1]) {
-//                    num = intArray[firstUnsortedIndex];
-//                    stop_loop = true;
-//                }
-//            }
+            int i;
 
-//            System.out.println(num);
-//            stop_loop = true;
-//            int largestElement = 0;
-//            for (int i = 0; i < intArray.length; i++) {
-//
-//                if(intArray[firstUnsortedIndex] > intArray[i + 1]) {
-//                    largestElement = intArray[i];
-//                }
-//
-//            }
+            for (i = firstUnsortedIndex; i > 0 && intArray[i - 1] > newElement; i--) {
+                intArray[i] = intArray[i - 1];
+            }
+            
+            intArray[i] = newElement;
 
+        }
+
+        for (int i = 0; i < intArray.length; i++) {
+            System.out.println(intArray[i]);
         }
     }
 }
